@@ -66,6 +66,8 @@ ext {
   utils = new Utils(baseVersion, logger)
   isReleaseVersion = !baseVersion.endsWith('SNAPSHOT')
   isCloudbees = System.getenv('JENKINS_URL')?.contains('cloudbees')
+
+  mvnlocal = true
 }
 
 if (deployUrl.contains('nexus')) {

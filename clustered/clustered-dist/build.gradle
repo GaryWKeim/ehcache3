@@ -31,8 +31,15 @@ ext {
 dependencies {
   compileOnly project(':clustered:client')
   compileOnly project(':clustered:common')
+  compileOnly project(':management')
   // Needed because declared as provided in the different projects
   compileOnly "org.terracotta:runnel:$parent.terracottaPlatformVersion"
+  compileOnly "org.ehcache.modules:ehcache-management:$parent.baseVersion"
+
+  compileOnly "org.terracotta.management:management-registry:$parent.terracottaPlatformVersion"
+  compileOnly "org.terracotta.management.dist:mnm-common:$parent.managementVersion"
+  compileOnly "org.terracotta.management.dist:mnm-nms:$parent.managementVersion"
+  compileOnly "org.terracotta.management.dist:mnm-nms-agent:$parent.managementVersion"
 }
 
 apply plugin: 'distribution'
